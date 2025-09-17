@@ -1,9 +1,6 @@
 package ee.mihkel.veebipood.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,4 +21,24 @@ public class Product {
     private boolean active; // kahendväärtus
     private String description;
     private String image;
+
+    // @OneToOne
+    // @OneToMany
+    // @ManyToOne
+    // @ManyToMany
+    @ManyToOne
+    private Category category;
 }
+
+// Gluteenivaba, Laktoosivaba, GMO-vaba
+//  @ManyToMany
+// private List<Omadus>
+
+// @OneToMany
+// private List<Auto>
+
+// @OneToOne
+// private Aadress
+
+// @ManyToOne
+// private Silmavärv
